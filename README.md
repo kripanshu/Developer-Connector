@@ -7,9 +7,10 @@ know about other developers.
 > MERN : MongoDB Express.js React.js Node.js
 
 ### Steps to Use
-- Git clone the repository
-- npm install
-- npm run server
-
+```
+git clone <Repo>
+npm install
+npm run server
+```
 ### Scope
 - Deploy on heroku

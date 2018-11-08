@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 const db = require('./config/keys').mongoURI;
 
 // connect to mongoose
-mongoose.connect(db).then(() => console.log('MongoDB Connected'))
+mongoose.connect(db,{ useNewUrlParser: true }).then(() => console.log('MongoDB Connected'))
 .catch(err => console.log("Error in connceting to MongoDB ", err));
 
 app.get('/', (req, res) => res.send("Forca Barca"));

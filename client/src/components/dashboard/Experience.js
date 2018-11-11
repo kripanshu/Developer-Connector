@@ -30,7 +30,10 @@ class Experience extends Component {
             <th>Years</th>
           </tr>
         </thead>
+        <tbody>
           {experience}
+        </tbody>
+          
         </table>
       </div>
     )

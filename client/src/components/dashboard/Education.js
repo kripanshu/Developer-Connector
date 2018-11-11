@@ -32,7 +32,9 @@ class Education extends Component {
             <th>Years</th>
           </tr>
         </thead>
+        <tbody>
           {education}
+          </tbody>
         </table>
       </div>
     )

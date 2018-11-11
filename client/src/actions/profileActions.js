@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import {
+  GET_PROFILES,
   GET_PROFILE,
   PROFILE_LOADING,
   CLEAR_CURRENT_PROFILE,
@@ -93,6 +94,31 @@ export const deleteEducation = (id) => dispatch =>{
   .catch(err=> dispatch({
     type: GET_ERRORS,
     payload : err.response.data
+  }))
+}
+// get all profiles 
+export const getProfiles = () => dispatch =>{
+  axios.get('/api/profile/all')
+  .then(res => dispatch({
+    type: GET_PROFILES,
+    payload : res.data
+  }))
+  .catch(err=> dispatch({
+    type: GET_PROFILES,
+    payload :{}
+  }))
+}
+// get profile by handle 
+export const getProfileByHandle = (handle) => dispatch =>{
+  dispatch(setProfileLoading());
+  axios.get(`/api/profile/handle/${handle}`)
+  .then(res => dispatch({
+    type: GET_PROFILE,
+    payload : res.data
+  }))
+  .catch(err=> dispatch({
+    type: GET_PROFILE,
+    payload : null
   }))
 }
 // Profile loading
